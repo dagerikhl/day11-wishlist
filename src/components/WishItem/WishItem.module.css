@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+
+  padding: 8px 16px;
+
+  background-color: var(--color-bkg-pri);
+  border: 1px solid var(--color-shd);
+  border-radius: 4px;
+}
+
+.container > :not(:first-child) {
+  margin-left: 16px;
+}
+
+.icon {
+  height: 64px;
+  width: 64px;
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: normal;
+}

@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+
+  padding: 8px;
+
+  background-color: var(--color-shd);
+  border: 1px solid var(--color-shd);
+  border-radius: 4px;
+}
+
+.container > :not(:first-child) {
+  margin-top: 8px;
+}
