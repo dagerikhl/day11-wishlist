@@ -25,6 +25,21 @@ export const App = () => {
       </header>
 
       <main className={styles.main}>
+        <div className={styles.description}>
+          <p>
+            Klikk på et ønske for å markere at du har kjøpt dette for
+            brudeparet.
+          </p>
+          <p>
+            Du kan alltid klikke på et ønske igjen for å markere at gaven ikke
+            er kjøpt om noe skulle bli feil.
+          </p>
+          <p>
+            Husk å bare klikke på gaver du selv har kjøpt, og la andre
+            markeringer stå som de er.
+          </p>
+        </div>
+
         <Pool>
           {error && <ErrorMessage error={error} />}
           {isLoading && <Loader />}
