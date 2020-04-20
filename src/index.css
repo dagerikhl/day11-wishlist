@@ -12,6 +12,16 @@
   --color-err: #f00000;
 
   --size-header-height: 64px;
+
+  --box-shadow-inside: inset 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    inset 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    inset 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  --box-shadow-outside: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  --box-shadow-outside--elevated: 0 0 8px 0 rgba(0, 0, 0, 0.08),
+    0 0 15px 0 rgba(0, 0, 0, 0.02), 0 0 20px 4px rgba(0, 0, 0, 0.06);
+
+  --transition-elevate: box-shadow 150ms linear;
 }
 
 body {
@@ -26,6 +36,10 @@ body {
 a {
   color: var(--color-lnk);
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 h1,

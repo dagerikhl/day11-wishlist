@@ -10,10 +10,10 @@
   border-radius: 2px;
 
   font-size: 24px;
+
+  user-select: none;
 }
 
-.container:hover {
+.active {
   border: 2px solid var(--color-shd-dark);
-
-  cursor: pointer;
 }
