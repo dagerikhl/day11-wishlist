@@ -3,4 +3,6 @@ export interface Wish {
   description: string;
   url: string;
   icon: string;
+
+  aquired: boolean;
 }

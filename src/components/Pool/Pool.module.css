@@ -1,6 +1,19 @@
 .container {
   width: 100%;
 
+  margin: 16px 0;
+}
+
+.heading {
+  margin-bottom: 16px;
+
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.pool {
+  min-height: 128px;
+
   padding: 8px;
 
   background-color: var(--color-shd);
@@ -9,6 +22,6 @@
   box-shadow: var(--box-shadow-inside);
 }
 
-.container > :not(:first-child) {
+.pool > :not(:first-child) {
   margin-top: 8px;
 }

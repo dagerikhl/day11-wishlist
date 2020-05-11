@@ -11,7 +11,7 @@ import { Wish } from "../../interfaces/Wish";
 import styles from "./App.module.css";
 
 export const App = () => {
-  const { author, title } = useContext(Personalization);
+  const { author, title, strings } = useContext(Personalization);
 
   // TODO Implement and get this from a real back-end database
   const { error, isLoading, response: wishes } = useApi<Wish[]>(
@@ -26,25 +26,29 @@ export const App = () => {
 
       <main className={styles.main}>
         <div className={styles.description}>
-          <p>
-            Klikk på et ønske for å markere at du har kjøpt dette for
-            brudeparet.
-          </p>
-          <p>
-            Du kan alltid klikke på et ønske igjen for å markere at gaven ikke
-            er kjøpt om noe skulle bli feil.
-          </p>
-          <p>
-            Husk å bare klikke på gaver du selv har kjøpt, og la andre
-            markeringer stå som de er.
-          </p>
+          <p>{strings["lead.1"]}</p>
+          <p>{strings["lead.2"]}</p>
+          <p>{strings["lead.3"]}</p>
         </div>
 
         <Pool>
           {error && <ErrorMessage error={error} />}
           {isLoading && <Loader />}
+
           {wishes &&
-            wishes.map((wish) => <WishItem key={wish.title} wish={wish} />)}
+            wishes
+              .filter((wish) => !wish.aquired)
+              .map((wish) => <WishItem key={wish.title} wish={wish} />)}
+        </Pool>
+
+        <Pool label={strings["aquired-pool.title"]}>
+          {error && <ErrorMessage error={error} />}
+          {isLoading && <Loader />}
+
+          {wishes &&
+            wishes
+              .filter((wish) => wish.aquired)
+              .map((wish) => <WishItem key={wish.title} wish={wish} />)}
         </Pool>
       </main>
 

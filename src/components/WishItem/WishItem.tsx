@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { Personalization } from "../../contexts/Personalization";
 
 import { cz } from "../../helpers/cz";
 import { Wish } from "../../interfaces/Wish";
@@ -12,7 +13,9 @@ interface WishItemProps {
 
 // FIXME
 export const WishItem: React.FC<WishItemProps> = ({ wish }) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const { strings } = useContext(Personalization);
+
+  const [isChecked, setIsChecked] = useState(wish.aquired);
 
   const onClick = () => {
     setIsChecked(!isChecked);
@@ -23,8 +26,8 @@ export const WishItem: React.FC<WishItemProps> = ({ wish }) => {
       className={cz(styles.container, isChecked && styles.grayscale)}
       title={
         isChecked
-          ? "Klikk for å markere at varen ikke er kjøpt likevel"
-          : "Klikk for å markere at du har kjøpt denne gaven"
+          ? strings["check-wish.checked"]
+          : strings["check-wish.unchecked"]
       }
       onClick={onClick}
     >
@@ -38,7 +41,7 @@ export const WishItem: React.FC<WishItemProps> = ({ wish }) => {
 
         <a
           href={wish.url}
-          title="Klikk for å gå til ønsket"
+          title={strings["goto.wish-url"]}
           target="_blank"
           rel="noopener noreferrer"
         >
