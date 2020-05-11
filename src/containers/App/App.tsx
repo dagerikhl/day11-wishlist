@@ -21,7 +21,9 @@ export const App = () => {
   return (
     <section>
       <header className={styles.header}>
-        <h1>&hearts; {title}</h1>
+        <h1>
+          <i className="bx bxs-heart" /> {title}
+        </h1>
       </header>
 
       <main className={styles.main}>
@@ -52,7 +54,9 @@ export const App = () => {
         </Pool>
       </main>
 
-      <footer className={styles.footer}>&copy; {author} - 2020</footer>
+      <footer className={styles.footer}>
+        <i className="bx bx-copyright" />&nbsp;{author} - 2020
+      </footer>
     </section>
   );
 };

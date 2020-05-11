@@ -1,3 +1,4 @@
+import "boxicons";
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -5,6 +6,7 @@ import { App } from "./containers/App/App";
 import { Providers } from "./providers/Providers";
 import * as serviceWorker from "./serviceWorker";
 
+import "boxicons/css/boxicons.min.css";
 import "./index.css";
 
 ReactDOM.render(

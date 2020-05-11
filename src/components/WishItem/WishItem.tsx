@@ -3,7 +3,7 @@ import { Personalization } from "../../contexts/Personalization";
 
 import { cz } from "../../helpers/cz";
 import { Wish } from "../../interfaces/Wish";
-import { VisualCheckbox } from "../Checkbox/VisualCheckbox";
+import { Checkbox } from "../Checkbox/Checkbox";
 import ExternalAnchor from "../ExternalAnchor/ExternalAnchor";
 
 import styles from "./WishItem.module.css";
@@ -31,7 +31,7 @@ export const WishItem: React.FC<WishItemProps> = ({ wish }) => {
       }
       onClick={onClick}
     >
-      <VisualCheckbox checked={isChecked} />
+      <Checkbox checked={isChecked} />
 
       <div className={styles.contentContainer}>
         <img className={styles.icon} src={wish.icon} alt={wish.title} />

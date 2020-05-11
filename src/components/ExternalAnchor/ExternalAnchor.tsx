@@ -1,4 +1,5 @@
 import React from "react";
+import { cz } from "../../helpers/cz";
 
 import styles from "./ExternalAnchor.module.css";
 
@@ -15,8 +16,8 @@ const ExternalAnchor: React.FC<ExternalAnchorProps> = ({ href, title }) => (
     target="_blank"
     rel="noopener noreferrer"
   >
-    {href}
-    <span className={styles.icon}>{">"}</span>
+    <span>{href}</span>
+    <i className={cz(styles.icon, "bx", "bx-link-external")} />
   </a>
 );
 
