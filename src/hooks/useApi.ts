@@ -12,20 +12,23 @@ export const useApi = <T>(url: string) => {
   useEffect(() => {
     setState({ isLoading: true });
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((response) => {
-        setState({
-          isLoading: false,
-          response,
+    // TODO Remove fake delay
+    setTimeout(() => {
+      fetch(url)
+        .then((response) => response.json())
+        .then((response) => {
+          setState({
+            isLoading: false,
+            response,
+          });
+        })
+        .catch((error) => {
+          setState({
+            error,
+            isLoading: false,
+          });
         });
-      })
-      .catch((error) => {
-        setState({
-          error,
-          isLoading: false,
-        });
-      });
+    }, 800);
   }, [url]);
 
   return state;
