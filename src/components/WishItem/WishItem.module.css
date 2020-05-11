@@ -18,28 +18,35 @@
   box-shadow: var(--box-shadow-outside--elevated);
 }
 
-.container > :not(:first-child) {
-  margin-left: 24px;
-}
-
 .grayscale {
   filter: grayscale(100%) brightness(75%);
   box-shadow: none;
+}
+
+.contentContainer {
+  display: flex;
+  align-items: center;
 }
 
 .icon {
   height: 64px;
   width: 64px;
 
+  margin-left: 24px;
+
   user-select: none;
 }
 
 .textContainer {
   flex: 1;
+
+  margin-left: 24px;
 }
 
 .textContainer > :not(:first-child) {
   display: block;
+
+  width: fit-content;
 
   margin-top: 4px;
 }
@@ -51,4 +58,11 @@
 .description {
   font-size: 18px;
   font-weight: normal;
+}
+
+@media only screen and (max-width: 600px) {
+  .contentContainer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }

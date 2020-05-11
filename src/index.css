@@ -9,9 +9,11 @@
   --color-shd: rgba(0, 0, 0, 0.2);
   --color-shd-dark: rgba(0, 0, 0, 0.5);
   --color-lnk: #004acb;
+  --color-lnk-bkg: rgba(20, 20, 80, 0.1);
+  --color-lnk-bkg--hov: rgba(20, 20, 80, 0.05);
   --color-err: #f00000;
 
-  --size-header-height: 64px;
+  --size-header-height: 96px;
 
   --box-shadow-inside: inset 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     inset 0px 1px 1px 0px rgba(0, 0, 0, 0.14),

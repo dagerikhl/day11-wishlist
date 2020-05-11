@@ -4,6 +4,7 @@ import { Personalization } from "../../contexts/Personalization";
 import { cz } from "../../helpers/cz";
 import { Wish } from "../../interfaces/Wish";
 import { VisualCheckbox } from "../Checkbox/VisualCheckbox";
+import ExternalAnchor from "../ExternalAnchor/ExternalAnchor";
 
 import styles from "./WishItem.module.css";
 
@@ -11,7 +12,6 @@ interface WishItemProps {
   wish: Wish;
 }
 
-// FIXME
 export const WishItem: React.FC<WishItemProps> = ({ wish }) => {
   const { strings } = useContext(Personalization);
 
@@ -33,20 +33,15 @@ export const WishItem: React.FC<WishItemProps> = ({ wish }) => {
     >
       <VisualCheckbox checked={isChecked} />
 
-      <img className={styles.icon} src={wish.icon} alt={wish.title} />
+      <div className={styles.contentContainer}>
+        <img className={styles.icon} src={wish.icon} alt={wish.title} />
 
-      <div className={styles.textContainer}>
-        <h1 className={styles.title}>{wish.title}</h1>
-        <h2 className={styles.description}>{wish.description}</h2>
+        <div className={styles.textContainer}>
+          <h1 className={styles.title}>{wish.title}</h1>
+          <h2 className={styles.description}>{wish.description}</h2>
 
-        <a
-          href={wish.url}
-          title={strings["goto.wish-url"]}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {wish.url}
-        </a>
+          <ExternalAnchor href={wish.url} title={strings["goto.wish-url"]} />
+        </div>
       </div>
     </div>
   );
