@@ -3,6 +3,8 @@
 
   background-color: var(--color-lnk-bkg);
   border-radius: 4px;
+
+  word-break: break-all;
 }
 
 .anchor:hover {

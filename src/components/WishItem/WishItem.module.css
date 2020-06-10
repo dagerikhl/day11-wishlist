@@ -26,6 +26,8 @@
 .contentContainer {
   display: flex;
   align-items: center;
+
+  width: calc(100% - 24px);
 }
 
 .icon {
@@ -41,6 +43,8 @@
 
 .textContainer {
   flex: 1;
+
+  width: calc(100% - 24px);
 
   margin-left: 24px;
 }
