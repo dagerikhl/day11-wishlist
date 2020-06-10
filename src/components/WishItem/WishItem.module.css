@@ -34,6 +34,8 @@
 
   margin-left: 24px;
 
+  object-fit: contain;
+
   user-select: none;
 }
 
