@@ -1,17 +1,13 @@
 import React from "react";
 
-import { Strings } from "../providers/strings";
+import { PersonalizationStrings } from "../interfaces/PersonalizationStrings";
 
 export interface PersonalizationStore {
-  author: string;
-  title: string;
-  strings: Strings;
+  strings: PersonalizationStrings;
 }
 
 const defaultStore: PersonalizationStore = {
-  author: "",
-  title: "",
-  strings: {} as Strings,
+  strings: {} as PersonalizationStrings,
 };
 
 export const Personalization = React.createContext<PersonalizationStore>(

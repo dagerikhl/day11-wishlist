@@ -27,4 +27,6 @@ yarn-error.log*
 .vscode/
 
 # project
+src/personalization/*
+!src/personalization/README.md
 public/dummy-data.json

@@ -11,7 +11,7 @@ import { Wish } from "../../interfaces/Wish";
 import styles from "./App.module.css";
 
 export const App = () => {
-  const { author, title, strings } = useContext(Personalization);
+  const { strings } = useContext(Personalization);
 
   // TODO Implement and get this from a real back-end database
   const { error, isLoading, response: wishes } = useApi<Wish[]>(
@@ -22,15 +22,15 @@ export const App = () => {
     <section>
       <header className={styles.header}>
         <h1>
-          <i className="bx bxs-heart" /> {title}
+          <i className="bx bxs-heart" /> {strings.title}
         </h1>
       </header>
 
       <main className={styles.main}>
         <div className={styles.description}>
-          <p>{strings["lead.1"]}</p>
-          <p>{strings["lead.2"]}</p>
-          <p>{strings["lead.3"]}</p>
+          <p>{strings.lead[1]}</p>
+          <p>{strings.lead[2]}</p>
+          <p>{strings.lead[3]}</p>
         </div>
 
         <Pool>
@@ -43,7 +43,7 @@ export const App = () => {
               .map((wish) => <WishItem key={wish.title} wish={wish} />)}
         </Pool>
 
-        <Pool label={strings["aquired-pool.title"]}>
+        <Pool label={strings["aquired-pool"].title}>
           {error && <ErrorMessage error={error} />}
           {isLoading && <Loader />}
 
@@ -55,7 +55,8 @@ export const App = () => {
       </main>
 
       <footer className={styles.footer}>
-        <i className="bx bx-copyright" />&nbsp;{author} - 2020
+        <i className="bx bx-copyright" />
+        &nbsp;{strings.author} - 2020
       </footer>
     </section>
   );

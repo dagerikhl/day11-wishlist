@@ -26,8 +26,8 @@ export const WishItem: React.FC<WishItemProps> = ({ wish }) => {
       className={cz(styles.container, isChecked && styles.grayscale)}
       title={
         isChecked
-          ? strings["check-wish.checked"]
-          : strings["check-wish.unchecked"]
+          ? strings["check-wish"].checked
+          : strings["check-wish"].unchecked
       }
       onClick={onClick}
     >
@@ -40,7 +40,7 @@ export const WishItem: React.FC<WishItemProps> = ({ wish }) => {
           <h1 className={styles.title}>{wish.title}</h1>
           <h2 className={styles.description}>{wish.description}</h2>
 
-          <ExternalAnchor href={wish.url} title={strings["goto.wish-url"]} />
+          <ExternalAnchor href={wish.url} title={strings.goto["wish-url"]} />
         </div>
       </div>
     </div>
