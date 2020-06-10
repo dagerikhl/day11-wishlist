@@ -8,17 +8,24 @@ interface ExternalAnchorProps {
   title?: string;
 }
 
-const ExternalAnchor: React.FC<ExternalAnchorProps> = ({ href, title }) => (
-  <a
-    className={styles.anchor}
-    href={href}
-    title={title}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <span>{href}</span>
-    <i className={cz(styles.icon, "bx", "bx-link-external")} />
-  </a>
-);
+const ExternalAnchor: React.FC<ExternalAnchorProps> = ({ href, title }) => {
+  const onClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+  };
+
+  return (
+    <a
+      className={styles.anchor}
+      href={href}
+      title={title}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={onClick}
+    >
+      <span>{href}</span>
+      <i className={cz(styles.icon, "bx", "bx-link-external")} />
+    </a>
+  );
+};
 
 export default ExternalAnchor;
