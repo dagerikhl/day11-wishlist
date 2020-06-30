@@ -10,18 +10,18 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "4.2.4",
-    "@testing-library/react": "9.3.2",
-    "@testing-library/user-event": "7.1.2",
-    "@types/jest": "24.0.0",
-    "@types/node": "12.0.0",
+    "@testing-library/jest-dom": "5.11.0",
+    "@testing-library/react": "10.4.3",
+    "@testing-library/user-event": "12.0.11",
+    "@types/jest": "26.0.3",
+    "@types/node": "14.0.14",
     "@types/react": "16.9.41",
     "@types/react-dom": "16.9.8",
     "boxicons": "2.0.5",
     "react": "0.0.0-experimental-7f28234f8",
     "react-dom": "0.0.0-experimental-7f28234f8",
     "react-scripts": "3.4.1",
-    "typescript": "3.7.2"
+    "typescript": "3.9.5"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +39,6 @@
     ]
   },
   "devDependencies": {
-    "prettier": "2.0.4"
+    "prettier": "2.0.5"
   }
 }
