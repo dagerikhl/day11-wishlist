@@ -11,6 +11,7 @@ type Type = "aquired" | "unaquired";
 
 interface WishPoolProps {
   type: Type;
+  title?: string;
   error?: Error;
   isLoading: boolean;
   wishes?: Wish[];
@@ -18,6 +19,7 @@ interface WishPoolProps {
 
 export const WishPool: React.FC<WishPoolProps> = ({
   type,
+  title,
   error,
   isLoading,
   wishes,
@@ -25,7 +27,7 @@ export const WishPool: React.FC<WishPoolProps> = ({
   const { strings } = useContext(Personalization);
 
   return (
-    <Pool>
+    <Pool title={title}>
       {error ? (
         <ErrorMessage error={error} />
       ) : isLoading ? (
