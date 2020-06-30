@@ -18,9 +18,11 @@
     "@types/react": "16.9.41",
     "@types/react-dom": "16.9.8",
     "boxicons": "2.0.5",
+    "firebase": "7.15.5",
     "react": "0.0.0-experimental-7f28234f8",
     "react-dom": "0.0.0-experimental-7f28234f8",
     "react-scripts": "3.4.1",
+    "reactfire": "2.0.3",
     "typescript": "3.9.5"
   },
   "devDependencies": {
