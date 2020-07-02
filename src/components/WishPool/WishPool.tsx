@@ -1,11 +1,24 @@
+import { firestore } from "firebase";
 import React, { useContext } from "react";
-import { useFirestore, useFirestoreCollectionData } from "reactfire";
+import { useFirestore, useFirestoreCollection } from "reactfire";
 
-import { WishItem } from "../WishItem/WishItem";
 import { Personalization } from "../../contexts/Personalization";
+import { FixedUseFireStoreCollection } from "../../fixes/reactfire";
 import { Wish } from "../../interfaces/Wish";
+import { WishItem } from "../WishItem/WishItem";
 
 type Type = "aquired" | "unaquired";
+
+const createOnTypeFilter = (type: Type) => (
+  wishDocument: firestore.QueryDocumentSnapshot<Wish>
+) => {
+  const wish = wishDocument.data();
+
+  return (
+    (wish.aquired && type === "aquired") ||
+    (!wish.aquired && type === "unaquired")
+  );
+};
 
 interface WishPoolProps {
   type: Type;
@@ -15,18 +28,25 @@ export const WishPool: React.FC<WishPoolProps> = ({ type }) => {
   const { strings } = useContext(Personalization);
 
   const wishesRef = useFirestore().collection("wishes");
-  let wishes = useFirestoreCollectionData<Wish>(wishesRef);
+  const wishesCollection = (useFirestoreCollection as FixedUseFireStoreCollection)<
+    Wish
+  >(wishesRef);
+  const wishesDocuments = wishesCollection.docs;
 
-  if (type === "aquired") {
-    wishes = wishes.filter(({ aquired }) => !!aquired);
-  } else if (type === "unaquired") {
-    wishes = wishes.filter(({ aquired }) => !aquired);
-  }
+  const filteredWishesDocuments = wishesDocuments.filter(
+    createOnTypeFilter(type)
+  );
 
   return (
     <>
-      {wishes && wishes.length > 0
-        ? wishes.map((wish) => <WishItem key={wish.title} wish={wish} />)
+      {filteredWishesDocuments.length > 0
+        ? filteredWishesDocuments.map((wishDocument) => (
+            <WishItem
+              key={wishDocument.id}
+              documentId={wishDocument.id}
+              wish={wishDocument.data()}
+            />
+          ))
         : strings.pools[type]["no-wishes"]}
     </>
   );

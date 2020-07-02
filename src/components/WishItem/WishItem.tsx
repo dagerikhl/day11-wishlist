@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
-import { Personalization } from "../../contexts/Personalization";
+import React, { useContext } from "react";
+import { useFirestore } from "reactfire";
 
+import { Personalization } from "../../contexts/Personalization";
 import { cz } from "../../helpers/cz";
 import { Wish } from "../../interfaces/Wish";
 import { Checkbox } from "../Checkbox/Checkbox";
@@ -9,29 +10,30 @@ import ExternalAnchor from "../ExternalAnchor/ExternalAnchor";
 import styles from "./WishItem.module.css";
 
 interface WishItemProps {
+  documentId: string;
   wish: Wish;
 }
 
-export const WishItem: React.FC<WishItemProps> = ({ wish }) => {
+export const WishItem: React.FC<WishItemProps> = ({ documentId, wish }) => {
   const { strings } = useContext(Personalization);
 
-  const [isChecked, setIsChecked] = useState(wish.aquired);
+  const wishRef = useFirestore().collection("wishes").doc(documentId);
 
   const onClick = () => {
-    setIsChecked(!isChecked);
+    wishRef.update({ aquired: !wish.aquired });
   };
 
   return (
     <div
-      className={cz(styles.container, isChecked && styles.grayscale)}
+      className={cz(styles.container, wish.aquired && styles.grayscale)}
       title={
-        isChecked
+        wish.aquired
           ? strings["check-wish"].checked
           : strings["check-wish"].unchecked
       }
       onClick={onClick}
     >
-      <Checkbox checked={isChecked} />
+      <Checkbox checked={wish.aquired} />
 
       <div className={styles.contentContainer}>
         <img className={styles.icon} src={wish.icon} alt={wish.title} />
