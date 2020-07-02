@@ -1,34 +1,27 @@
 import React, { useContext } from "react";
+import { SuspenseWithPerf } from "reactfire";
 
+import { Loader } from "../../components/Loader/Loader";
+import { Pool } from "../../components/Pool/Pool";
 import { WishPool } from "../../components/WishPool/WishPool";
 import { Personalization } from "../../contexts/Personalization";
-import { useApi } from "../../hooks/useApi";
-import { Wish } from "../../interfaces/Wish";
 
 export const Wishes = () => {
   const { strings } = useContext(Personalization);
 
-  // TODO Implement and get this from a real back-end database
-  const { error, isLoading, response: wishes } = useApi<Wish[]>(
-    "/dummy-data.json"
-  );
-
   return (
     <>
-      <WishPool
-        type="unaquired"
-        error={error}
-        isLoading={isLoading}
-        wishes={wishes && wishes.filter((wish) => !wish.aquired)}
-      />
+      <Pool>
+        <SuspenseWithPerf fallback={<Loader />} traceId="load-unaquired-wishes">
+          <WishPool type="unaquired" />
+        </SuspenseWithPerf>
+      </Pool>
 
-      <WishPool
-        type="aquired"
-        title={strings.pools.aquired.title}
-        error={error}
-        isLoading={isLoading}
-        wishes={wishes && wishes.filter((wish) => wish.aquired)}
-      />
+      <Pool title={strings.pools.aquired.title}>
+        <SuspenseWithPerf fallback={<Loader />} traceId="load-aquired-wishes">
+          <WishPool type="aquired" />
+        </SuspenseWithPerf>
+      </Pool>
     </>
   );
 };

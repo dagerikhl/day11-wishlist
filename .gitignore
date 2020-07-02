@@ -29,7 +29,6 @@ yarn-error.log*
 # project
 src/personalization/*
 !src/personalization/README.md
-public/dummy-data.json
 
 # deploy
 .firebase/
