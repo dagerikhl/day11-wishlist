@@ -5,6 +5,8 @@ import { Wishes } from "../Wishes/Wishes";
 
 import styles from "./App.module.css";
 
+import pkg from "../../../package.json";
+
 export const App = () => {
   const { strings } = useContext(Personalization);
 
@@ -27,8 +29,12 @@ export const App = () => {
       </main>
 
       <footer className={styles.footer}>
-        <i className="bx bx-copyright" />
-        &nbsp;{strings.author} - 2020
+        <div>
+          <i className="bx bx-copyright" />
+          &nbsp;{strings.author} - 2020
+        </div>
+
+        <div>v{pkg.version}</div>
       </footer>
     </section>
   );

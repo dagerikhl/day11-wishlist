@@ -1,13 +1,18 @@
 {
   "name": "day11-wishlist",
   "description": "Wedding wishlist for guests to mark things they have bought for the couple.",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": false,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "release": "yarn version --patch",
+    "release:patch": "yarn version --patch",
+    "release:minor": "yarn version --minor",
+    "release:major": "yarn version --major",
+    "deploy": "yarn build && firebase deploy"
   },
   "dependencies": {
     "@testing-library/jest-dom": "5.11.0",
@@ -26,6 +31,7 @@
     "typescript": "3.9.5"
   },
   "devDependencies": {
+    "firebase-tools": "8.4.3",
     "prettier": "2.0.5"
   },
   "eslintConfig": {
