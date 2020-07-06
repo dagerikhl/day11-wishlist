@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 
-import { Personalization } from "../../contexts/Personalization";
+import { Space } from "../../../components/layout/Space/Space";
+import { Suspended } from "../../../components/suspense/Suspended/Suspended";
+import { Personalization } from "../../../contexts/Personalization";
+import LoginStatus from "./LoginStatus";
 import { Routes } from "./Routes";
 
 import styles from "./App.module.css";
 
-import pkg from "../../../package.json";
+import pkg from "../../../../package.json";
 
 export const App: React.FC = () => {
   const { strings } = useContext(Personalization);
@@ -16,10 +19,16 @@ export const App: React.FC = () => {
         <h1>
           <i className="bx bxs-heart" /> {strings.title}
         </h1>
+
+        <Suspended traceId="login-status">
+          <LoginStatus />
+        </Suspended>
       </header>
 
-      <main className={styles.main}>
-        <Routes />
+      <main className={styles.mainContainer}>
+        <Space className={styles.main} element="main" top>
+          <Routes />
+        </Space>
       </main>
 
       <footer className={styles.footer}>

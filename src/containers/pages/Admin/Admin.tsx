@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Space } from "../../components/Space/Space";
+import { Space } from "../../../components/layout/Space/Space";
 
 import styles from "./Admin.module.css";
 

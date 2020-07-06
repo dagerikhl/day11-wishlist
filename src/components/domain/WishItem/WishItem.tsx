@@ -2,10 +2,10 @@ import cz from "classnames";
 import React, { useContext } from "react";
 import { useFirestore } from "reactfire";
 
-import { Personalization } from "../../contexts/Personalization";
-import { Wish } from "../../interfaces/Wish";
-import { Checkbox } from "../Checkbox/Checkbox";
-import { ExternalAnchor } from "../ExternalAnchor/ExternalAnchor";
+import { Personalization } from "../../../contexts/Personalization";
+import { Wish } from "../../../interfaces/Wish";
+import { Checkbox } from "../../form/Checkbox/Checkbox";
+import { ExternalAnchor } from "../../elements/ExternalAnchor/ExternalAnchor";
 
 import styles from "./WishItem.module.css";
 

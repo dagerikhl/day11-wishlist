@@ -2,7 +2,7 @@ import "boxicons";
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { App } from "./containers/App/App";
+import { App } from "./containers/pages/App/App";
 import { Providers } from "./providers/Providers";
 import * as serviceWorker from "./serviceWorker";
 

@@ -2,9 +2,9 @@ import { firestore } from "firebase";
 import React, { useContext } from "react";
 import { useFirestore, useFirestoreCollection } from "reactfire";
 
-import { Personalization } from "../../contexts/Personalization";
-import { FixedUseFireStoreCollection } from "../../fixes/reactfire";
-import { Wish } from "../../interfaces/Wish";
+import { Personalization } from "../../../contexts/Personalization";
+import { FixedUseFireStoreCollection } from "../../../fixes/reactfire";
+import { Wish } from "../../../interfaces/Wish";
 import { WishItem } from "../WishItem/WishItem";
 
 type Type = "aquired" | "unaquired";

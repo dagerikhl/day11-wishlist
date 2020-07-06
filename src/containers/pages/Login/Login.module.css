@@ -1,0 +1,7 @@
+.heading {
+  color: var(--color-adm);
+}
+
+.messageContainer {
+  height: var(--size-line-height);
+}

@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 
-import { Personalization } from "../../contexts/Personalization";
-import { Wishes } from "../Wishes/Wishes";
+import { Space } from "../../../components/layout/Space/Space";
+import { Personalization } from "../../../contexts/Personalization";
+import { Wishes } from "../../domain/Wishes/Wishes";
 
 import styles from "./Home.module.css";
 
@@ -10,11 +11,11 @@ export const Home: React.FC = () => {
 
   return (
     <>
-      <div className={styles.description}>
+      <Space className={styles.description} bottom="large">
         <p>{strings.lead[1]}</p>
         <p>{strings.lead[2]}</p>
         <p>{strings.lead[3]}</p>
-      </div>
+      </Space>
 
       <Wishes />
     </>

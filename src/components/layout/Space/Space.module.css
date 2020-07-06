@@ -1,39 +1,39 @@
-.TopSmall {
+.topSmall {
   margin-top: var(--space-small);
 }
-.TopMedium {
+.topMedium {
   margin-top: var(--space-medium);
 }
-.TopLarge {
+.topLarge {
   margin-top: var(--space-large);
 }
 
-.RightSmall {
+.rightSmall {
   margin-right: var(--space-small);
 }
-.RightMedium {
+.rightMedium {
   margin-right: var(--space-medium);
 }
-.RightLarge {
+.rightLarge {
   margin-right: var(--space-large);
 }
 
-.BottomSmall {
+.bottomSmall {
   margin-bottom: var(--space-small);
 }
-.BottomMedium {
+.bottomMedium {
   margin-bottom: var(--space-medium);
 }
-.BottomLarge {
+.bottomLarge {
   margin-bottom: var(--space-large);
 }
 
-.LeftSmall {
+.leftSmall {
   margin-left: var(--space-small);
 }
-.LeftMedium {
+.leftMedium {
   margin-left: var(--space-medium);
 }
-.LeftLarge {
+.leftLarge {
   margin-left: var(--space-large);
 }
