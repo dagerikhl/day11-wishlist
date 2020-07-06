@@ -12,7 +12,8 @@
     "release:patch": "yarn version --patch",
     "release:minor": "yarn version --minor",
     "release:major": "yarn version --major",
-    "deploy": "yarn build && firebase deploy"
+    "deploy": "yarn build && firebase deploy",
+    "postdeploy":  "git tag -f latest"
   },
   "dependencies": {
     "@testing-library/jest-dom": "5.11.0",
