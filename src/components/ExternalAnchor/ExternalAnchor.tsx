@@ -8,7 +8,7 @@ interface ExternalAnchorProps {
   title?: string;
 }
 
-const ExternalAnchor: React.FC<ExternalAnchorProps> = ({ href, title }) => {
+export const ExternalAnchor: React.FC<ExternalAnchorProps> = ({ href, title }) => {
   const onClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
@@ -27,5 +27,3 @@ const ExternalAnchor: React.FC<ExternalAnchorProps> = ({ href, title }) => {
     </a>
   );
 };
-
-export default ExternalAnchor;

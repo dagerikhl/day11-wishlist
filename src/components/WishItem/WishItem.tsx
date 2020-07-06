@@ -5,7 +5,7 @@ import { Personalization } from "../../contexts/Personalization";
 import { cz } from "../../helpers/cz";
 import { Wish } from "../../interfaces/Wish";
 import { Checkbox } from "../Checkbox/Checkbox";
-import ExternalAnchor from "../ExternalAnchor/ExternalAnchor";
+import { ExternalAnchor } from "../ExternalAnchor/ExternalAnchor";
 
 import styles from "./WishItem.module.css";
 
