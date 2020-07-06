@@ -1,8 +1,8 @@
+import cz from "classnames";
 import React, { useContext } from "react";
 import { useFirestore } from "reactfire";
 
 import { Personalization } from "../../contexts/Personalization";
-import { cz } from "../../helpers/cz";
 import { Wish } from "../../interfaces/Wish";
 import { Checkbox } from "../Checkbox/Checkbox";
 import { ExternalAnchor } from "../ExternalAnchor/ExternalAnchor";

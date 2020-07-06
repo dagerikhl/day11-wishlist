@@ -1,6 +1,5 @@
+import cz from "classnames";
 import React from "react";
-
-import { cz } from "../../helpers/cz";
 
 import styles from "./Checkbox.module.css";
 

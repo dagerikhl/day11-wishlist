@@ -1,6 +1,7 @@
 @import-normalize;
 
 :root {
+  /* Colors */
   --color-pri: #f07070;
   --color-bkg-pri: #fffafa;
   --color-bkg-sec: #555050;
@@ -12,9 +13,12 @@
   --color-lnk-bkg: rgba(20, 20, 80, 0.1);
   --color-lnk-bkg--hov: rgba(20, 20, 80, 0.05);
   --color-err: #f00000;
+  --color-adm: #d05042;
 
+  /* Sizes */
   --size-header-height: 96px;
 
+  /* Shadows */
   --box-shadow-inside: inset 0 2px 1px -1px rgba(0, 0, 0, 0.2),
     inset 0 1px 1px 0 rgba(0, 0, 0, 0.14), inset 0 1px 3px 0 rgba(0, 0, 0, 0.12);
   --box-shadow-outside: 0 1px 1px 1px rgba(0, 0, 0, 0.2),
@@ -22,7 +26,13 @@
   --box-shadow-outside--elevated: 0 0 6px 0 rgba(0, 0, 0, 0.3),
     0 0 8px 0 rgba(0, 0, 0, 0.08), 0 0 9px 3px rgba(0, 0, 0, 0.12);
 
+  /* Transitions */
   --transition-elevate: box-shadow 150ms linear;
+
+  /* Space */
+  --space-small: 8px;
+  --space-medium: 16px;
+  --space-large: 32px;
 }
 
 * {

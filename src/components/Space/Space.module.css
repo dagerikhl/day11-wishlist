@@ -1,0 +1,39 @@
+.TopSmall {
+  margin-top: var(--space-small);
+}
+.TopMedium {
+  margin-top: var(--space-medium);
+}
+.TopLarge {
+  margin-top: var(--space-large);
+}
+
+.RightSmall {
+  margin-right: var(--space-small);
+}
+.RightMedium {
+  margin-right: var(--space-medium);
+}
+.RightLarge {
+  margin-right: var(--space-large);
+}
+
+.BottomSmall {
+  margin-bottom: var(--space-small);
+}
+.BottomMedium {
+  margin-bottom: var(--space-medium);
+}
+.BottomLarge {
+  margin-bottom: var(--space-large);
+}
+
+.LeftSmall {
+  margin-left: var(--space-small);
+}
+.LeftMedium {
+  margin-left: var(--space-medium);
+}
+.LeftLarge {
+  margin-left: var(--space-large);
+}

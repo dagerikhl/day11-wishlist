@@ -25,10 +25,6 @@
   background-color: var(--color-bkg-pri);
 }
 
-.description {
-  font-style: italic;
-}
-
 .footer {
   display: flex;
   justify-content: space-between;

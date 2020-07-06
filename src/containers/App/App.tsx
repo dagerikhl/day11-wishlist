@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 
 import { Personalization } from "../../contexts/Personalization";
-import { Wishes } from "../Wishes/Wishes";
+import { Routes } from "./Routes";
 
 import styles from "./App.module.css";
 
 import pkg from "../../../package.json";
 
-export const App = () => {
+export const App: React.FC = () => {
   const { strings } = useContext(Personalization);
 
   return (
@@ -19,13 +19,7 @@ export const App = () => {
       </header>
 
       <main className={styles.main}>
-        <div className={styles.description}>
-          <p>{strings.lead[1]}</p>
-          <p>{strings.lead[2]}</p>
-          <p>{strings.lead[3]}</p>
-        </div>
-
-        <Wishes />
+        <Routes />
       </main>
 
       <footer className={styles.footer}>

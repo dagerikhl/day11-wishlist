@@ -6,7 +6,7 @@ import { Pool } from "../../components/Pool/Pool";
 import { WishPool } from "../../components/WishPool/WishPool";
 import { Personalization } from "../../contexts/Personalization";
 
-export const Wishes = () => {
+export const Wishes: React.FC = () => {
   const { strings } = useContext(Personalization);
 
   return (

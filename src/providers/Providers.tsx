@@ -1,9 +1,10 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { FirebaseProvider } from "./FirebaseProvider";
 import { PersonalizationProvider } from "./PersonalizationProvider";
 
-const providers = [PersonalizationProvider, FirebaseProvider].reverse();
+const providers = [PersonalizationProvider, FirebaseProvider, Router].reverse();
 
 export const Providers: React.FC = ({ children }) => {
   let providerTree: React.ReactNode = children;
