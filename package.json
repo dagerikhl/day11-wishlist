@@ -1,7 +1,7 @@
 {
   "name": "day11-wishlist",
   "description": "Wedding wishlist for guests to mark things they have bought for the couple.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "scripts": {
     "start": "react-scripts start",
@@ -13,7 +13,7 @@
     "release:minor": "yarn version --minor",
     "release:major": "yarn version --major",
     "deploy": "yarn build && firebase deploy",
-    "postdeploy":  "git tag -f latest"
+    "postdeploy": "git tag -f latest"
   },
   "dependencies": {
     "@testing-library/jest-dom": "5.11.0",
