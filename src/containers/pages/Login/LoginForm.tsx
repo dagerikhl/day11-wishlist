@@ -1,6 +1,8 @@
 import React, { FormEvent, useState } from "react";
 import { useAuth } from "reactfire";
 
+import { Button } from "../../../components/form/Button/Button";
+import { Input } from "../../../components/form/Input/Input";
 import { Space } from "../../../components/layout/Space/Space";
 
 import styles from "./LoginForm.module.css";
@@ -52,14 +54,14 @@ export const LoginForm: React.FC<Props> = ({ setSuccessMessage, setError }) => {
     <form className={styles.form} onClick={handleFormSubmit}>
       <Space bottom="large">
         <Space bottom="small">
-          <input
+          <Input
             type="email"
             placeholder="Email"
             value={email}
             onChange={handleEmailChange}
           />
         </Space>
-        <input
+        <Input
           type="password"
           placeholder="Password"
           value={password}
@@ -67,9 +69,9 @@ export const LoginForm: React.FC<Props> = ({ setSuccessMessage, setError }) => {
         />
       </Space>
 
-      <button type="submit" onClick={handleSubmit}>
+      <Button type="submit" onClick={handleSubmit}>
         Login
-      </button>
+      </Button>
     </form>
   );
 };

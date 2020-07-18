@@ -1,3 +1,13 @@
+.space {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.topXSmall {
+  margin-top: var(--space-x-small);
+}
 .topSmall {
   margin-top: var(--space-small);
 }
@@ -8,6 +18,9 @@
   margin-top: var(--space-large);
 }
 
+.rightXSmall {
+  margin-right: var(--space-x-small);
+}
 .rightSmall {
   margin-right: var(--space-small);
 }
@@ -18,6 +31,9 @@
   margin-right: var(--space-large);
 }
 
+.bottomXSmall {
+  margin-bottom: var(--space-x-small);
+}
 .bottomSmall {
   margin-bottom: var(--space-small);
 }
@@ -28,6 +44,9 @@
   margin-bottom: var(--space-large);
 }
 
+.leftXSmall {
+  margin-left: var(--space-x-small);
+}
 .leftSmall {
   margin-left: var(--space-small);
 }

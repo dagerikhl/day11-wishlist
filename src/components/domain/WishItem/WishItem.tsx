@@ -6,6 +6,7 @@ import { Personalization } from "../../../contexts/Personalization";
 import { Wish } from "../../../interfaces/Wish";
 import { Checkbox } from "../../form/Checkbox/Checkbox";
 import { ExternalAnchor } from "../../elements/ExternalAnchor/ExternalAnchor";
+import { Space } from "../../layout/Space/Space";
 
 import styles from "./WishItem.module.css";
 
@@ -40,10 +41,17 @@ export const WishItem: React.FC<WishItemProps> = ({ documentId, wish }) => {
 
         <div className={styles.textContainer}>
           <h1 className={styles.title}>{wish.title}</h1>
-          <h2 className={styles.description}>{wish.description}</h2>
+          <Space element="h2" className={styles.description} top="small">
+            {wish.description}
+          </Space>
 
           {wish.url && (
-            <ExternalAnchor href={wish.url} title={strings.goto["wish-url"]} />
+            <Space top="small">
+              <ExternalAnchor
+                href={wish.url}
+                title={strings.goto["wish-url"]}
+              />
+            </Space>
           )}
         </div>
       </div>

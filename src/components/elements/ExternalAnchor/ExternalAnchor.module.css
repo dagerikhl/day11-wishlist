@@ -1,4 +1,4 @@
-.anchor {
+.externalAnchor {
   padding: 4px 8px;
 
   background-color: var(--color-lnk-bkg);
@@ -7,13 +7,7 @@
   word-break: break-all;
 }
 
-.anchor:hover {
+.externalAnchor:hover {
   background-color: var(--color-lnk-bkg--hov);
   box-shadow: var(--box-shadow-outside);
-
-  text-decoration: none;
-}
-
-.icon {
-  margin-left: 8px;
 }

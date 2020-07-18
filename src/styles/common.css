@@ -1,0 +1,33 @@
+.day11-field-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 10px;
+
+  background-color: var(--color-bkg-pri);
+  border: 2px solid var(--color-brd-pri);
+  border-radius: 4px;
+  outline: none;
+
+  transition: all 55ms linear;
+}
+
+.day11-field-base:hover {
+  background-color: var(--color-bkg-pri--hov);
+  box-shadow: var(--box-shadow-outside--elevated);
+}
+
+.day11-field-base:focus {
+  border: 2px solid var(--color-brd-pri--foc);
+  box-shadow: var(--box-shadow-outside--elevated);
+}
+
+.day11-anchor {
+  display: flex;
+  align-items: center;
+}
+
+.day11-anchor-text {
+  text-decoration: underline;
+}

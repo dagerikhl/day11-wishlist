@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import { InternalAnchor } from "../../elements/InternalAnchor/InternalAnchor";
 import { Space } from "../../layout/Space/Space";
 
 import styles from "./Unauthenticated.module.css";
@@ -21,7 +22,7 @@ export const UnauthenticatedMessage: React.FC = () => (
         <i className="bx bx-shield-alt-2" />
       </p>
 
-      <Link to="/login">Go to login page</Link>
+      <InternalAnchor to="/login">Go to login page</InternalAnchor>
     </div>
   </>
 );

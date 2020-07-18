@@ -1,29 +1,33 @@
 import cz from "classnames";
 import React from "react";
 
+import { Space } from "../../layout/Space/Space";
+
 import styles from "./ExternalAnchor.module.css";
 
-interface ExternalAnchorProps {
+interface Props {
   href: string;
   title?: string;
 }
 
-export const ExternalAnchor: React.FC<ExternalAnchorProps> = ({ href, title }) => {
+export const ExternalAnchor: React.FC<Props> = ({ href, title }) => {
   const onClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
 
   return (
     <a
-      className={styles.anchor}
+      className={cz("day11-anchor", styles.externalAnchor)}
       href={href}
       title={title}
       target="_blank"
       rel="noopener noreferrer"
       onClick={onClick}
     >
-      <span>{href}</span>
-      <i className={cz(styles.icon, "bx", "bx-link-external")} />
+      <span className="day11-anchor-text">{href}</span>
+      <Space left="x-small">
+        <i className="bx bx-link-external" />
+      </Space>
     </a>
   );
 };

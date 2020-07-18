@@ -1,10 +1,16 @@
 @import-normalize;
 
+@import "./styles/common.css";
+
 :root {
   /* Colors */
   --color-pri: #f07070;
   --color-bkg-pri: #fffafa;
+  --color-bkg-pri--hov: #efeaea;
   --color-bkg-sec: #555050;
+  --color-brd-pri: #555050;
+  --color-brd-pri--foc: #7777ff;
+  --color-brd-sec: #fffafa;
   --color-txt-pri: #151010;
   --color-txt-sec: #ffffff;
   --color-shd: rgba(0, 0, 0, 0.2);
@@ -33,6 +39,7 @@
   --transition-elevate: box-shadow 150ms linear;
 
   /* Space */
+  --space-x-small: 4px;
   --space-small: 8px;
   --space-medium: 16px;
   --space-large: 32px;
@@ -59,10 +66,6 @@ body {
 a {
   color: var(--color-lnk);
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 h1,
