@@ -12,8 +12,6 @@ interface Props {
   setError: (error?: Error) => void;
 }
 
-// TODO Style form elements like button and input (for all places)
-
 export const LoginForm: React.FC<Props> = ({ setSuccessMessage, setError }) => {
   const auth = useAuth();
 
