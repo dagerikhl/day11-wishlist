@@ -29,6 +29,7 @@
     "classnames": "2.2.6",
     "firebase": "7.15.5",
     "react": "0.0.0-experimental-7f28234f8",
+    "react-confirm-alert": "2.6.2",
     "react-dom": "0.0.0-experimental-7f28234f8",
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.1",

@@ -7,6 +7,7 @@ import { Providers } from "./providers/Providers";
 import * as serviceWorker from "./serviceWorker";
 
 import "boxicons/css/boxicons.min.css";
+import "react-confirm-alert/src/react-confirm-alert.css";
 import "./index.css";
 
 const root = document.getElementById("root") as HTMLElement;

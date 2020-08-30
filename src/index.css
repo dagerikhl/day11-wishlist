@@ -63,7 +63,7 @@ body {
   font-size: var(--size-font);
   line-height: var(--size-line-height);
 
-  overflow-y: scroll;
+  overflow-y: scroll !important;
 }
 
 h1,

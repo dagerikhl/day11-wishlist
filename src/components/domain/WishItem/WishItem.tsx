@@ -1,6 +1,7 @@
 import cz from "classnames";
 import React, { useContext } from "react";
 import { useFirestore } from "reactfire";
+import { confirmAlert } from "react-confirm-alert";
 
 import { Personalization } from "../../../contexts/Personalization";
 import { Wish } from "../../../interfaces/Wish";
@@ -17,7 +18,6 @@ interface WishItemProps {
   setError: (error?: Error) => void;
 }
 
-// TODO Add prompt on change
 export const WishItem: React.FC<WishItemProps> = ({
   documentId,
   wish,
@@ -29,22 +29,47 @@ export const WishItem: React.FC<WishItemProps> = ({
   const firestore = useFirestore();
 
   const onClick = () => {
-    firestore
-      .collection("wishes")
-      .doc(documentId)
-      .update({ aquired: !wish.aquired })
-      .then(() => {
-        setSuccessMessage(
-          strings["check-wish"][wish.aquired ? "checked" : "unchecked"].success
-        );
-      })
-      .catch((error) => {
-        error.message = `${
-          strings["check-wish"][wish.aquired ? "checked" : "unchecked"].error
-        }: ${error.message}`;
+    confirmAlert({
+      title:
+        strings["check-wish"][wish.aquired ? "checked" : "unchecked"].confirm
+          .title,
+      message:
+        strings["check-wish"][wish.aquired ? "checked" : "unchecked"].confirm
+          .message,
+      buttons: [
+        {
+          label:
+            strings["check-wish"][wish.aquired ? "checked" : "unchecked"]
+              .confirm.yes,
+          onClick: () => {
+            firestore
+              .collection("wishes")
+              .doc(documentId)
+              .update({ aquired: !wish.aquired })
+              .then(() => {
+                setSuccessMessage(
+                  strings["check-wish"][wish.aquired ? "checked" : "unchecked"]
+                    .success
+                );
+              })
+              .catch((error) => {
+                error.message = `${
+                  strings["check-wish"][wish.aquired ? "checked" : "unchecked"]
+                    .error
+                }: ${error.message}`;
 
-        setError(error);
-      });
+                setError(error);
+              });
+          },
+        },
+        {
+          label:
+            strings["check-wish"][wish.aquired ? "checked" : "unchecked"]
+              .confirm.no,
+          onClick: () => {},
+        },
+      ],
+    });
   };
 
   return (

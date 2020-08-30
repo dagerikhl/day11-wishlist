@@ -1,16 +1,20 @@
+interface CheckWish {
+  action: string;
+  confirm: {
+    title: string;
+    message: string;
+    yes: string;
+    no: string;
+  };
+  success: string;
+  error: string;
+}
+
 export interface PersonalizationStrings {
   author: string;
   "check-wish": {
-    checked: {
-      action: string;
-      success: string;
-      error: string;
-    };
-    unchecked: {
-      action: string;
-      success: string;
-      error: string;
-    };
+    checked: CheckWish;
+    unchecked: CheckWish;
   };
   contact: {
     email: string;
