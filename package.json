@@ -1,7 +1,7 @@
 {
   "name": "day11-wishlist",
   "description": "Wedding wishlist for guests to mark things they have bought for the couple.",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "start": "react-scripts start",
