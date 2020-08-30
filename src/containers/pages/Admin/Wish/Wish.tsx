@@ -106,22 +106,42 @@ export const Wish: React.FC = () => {
 
       {statusElement}
 
-      <Input placeholder="Title" value={title} onChange={onTitleChange} />
-      <Input
-        placeholder="Description"
-        value={description}
-        onChange={onDescriptionChange}
-        top
-      />
-      <Input placeholder="Icon" value={icon} onChange={onIconChange} top />
-      <Input placeholder="URL" value={url} onChange={onUrlChange} top />
-      <Input
-        label="Aquired"
-        type="checkbox"
-        checked={aquired}
-        onChange={onAquiredChange}
-        top
-      />
+      <div className={styles.form}>
+        <Input
+          label="Aquired"
+          type="checkbox"
+          checked={aquired}
+          onChange={onAquiredChange}
+        />
+        <Input
+          label="* Title"
+          placeholder="Title of wish"
+          value={title}
+          onChange={onTitleChange}
+          top
+        />
+        <Input
+          label="Description"
+          placeholder="Description of wish"
+          value={description}
+          onChange={onDescriptionChange}
+          top
+        />
+        <Input
+          label="Icon"
+          placeholder="Icon URL for wish"
+          value={icon}
+          onChange={onIconChange}
+          top
+        />
+        <Input
+          label="URL"
+          placeholder="Link to wish"
+          value={url}
+          onChange={onUrlChange}
+          top
+        />
+      </div>
 
       <Button onClick={onSave} top="large">
         Save

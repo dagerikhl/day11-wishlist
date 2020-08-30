@@ -1,3 +1,9 @@
 .heading {
   color: var(--color-adm);
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
