@@ -22,9 +22,15 @@ const createOnTypeFilter = (type: Type) => (
 
 interface WishPoolProps {
   type: Type;
+  setSuccessMessage: (successMessage?: string) => void;
+  setError: (error?: Error) => void;
 }
 
-export const WishPool: React.FC<WishPoolProps> = ({ type }) => {
+export const WishPool: React.FC<WishPoolProps> = ({
+  type,
+  setSuccessMessage,
+  setError,
+}) => {
   const { strings } = useContext(Personalization);
 
   const wishesRef = useFirestore().collection("wishes");
@@ -45,6 +51,8 @@ export const WishPool: React.FC<WishPoolProps> = ({ type }) => {
               key={wishDocument.id}
               documentId={wishDocument.id}
               wish={wishDocument.data()}
+              setSuccessMessage={setSuccessMessage}
+              setError={setError}
             />
           ))
         : strings.pools[type]["no-wishes"]}

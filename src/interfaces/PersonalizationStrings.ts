@@ -1,8 +1,16 @@
 export interface PersonalizationStrings {
   author: string;
   "check-wish": {
-    checked: string;
-    unchecked: string;
+    checked: {
+      action: string;
+      success: string;
+      error: string;
+    };
+    unchecked: {
+      action: string;
+      success: string;
+      error: string;
+    };
   };
   goto: {
     "wish-url": string;

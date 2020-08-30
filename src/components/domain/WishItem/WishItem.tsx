@@ -13,15 +13,38 @@ import styles from "./WishItem.module.css";
 interface WishItemProps {
   documentId: string;
   wish: Wish;
+  setSuccessMessage: (successMessage?: string) => void;
+  setError: (error?: Error) => void;
 }
 
-export const WishItem: React.FC<WishItemProps> = ({ documentId, wish }) => {
+// TODO Add prompt on change
+export const WishItem: React.FC<WishItemProps> = ({
+  documentId,
+  wish,
+  setSuccessMessage,
+  setError,
+}) => {
   const { strings } = useContext(Personalization);
 
-  const wishRef = useFirestore().collection("wishes").doc(documentId);
+  const firestore = useFirestore();
 
   const onClick = () => {
-    wishRef.update({ aquired: !wish.aquired });
+    firestore
+      .collection("wishes")
+      .doc(documentId)
+      .update({ aquired: !wish.aquired })
+      .then(() => {
+        setSuccessMessage(
+          strings["check-wish"][wish.aquired ? "checked" : "unchecked"].success
+        );
+      })
+      .catch((error) => {
+        error.message = `${
+          strings["check-wish"][wish.aquired ? "checked" : "unchecked"].error
+        }: ${error.message}`;
+
+        setError(error);
+      });
   };
 
   return (
@@ -29,8 +52,8 @@ export const WishItem: React.FC<WishItemProps> = ({ documentId, wish }) => {
       className={cz(styles.container, wish.aquired && styles.grayscale)}
       title={
         wish.aquired
-          ? strings["check-wish"].checked
-          : strings["check-wish"].unchecked
+          ? strings["check-wish"].checked.action
+          : strings["check-wish"].unchecked.action
       }
       onClick={onClick}
     >

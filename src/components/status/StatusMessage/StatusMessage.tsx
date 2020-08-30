@@ -17,7 +17,7 @@ export const StatusMessage: React.FC<Props> = ({ type, message }) => {
 
   return (
     <div
-      className={cz({
+      className={cz(styles.statusMessage, {
         [styles.success]: type === "success",
         [styles.error]: type === "error",
       })}
