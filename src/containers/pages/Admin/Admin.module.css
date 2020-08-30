@@ -1,3 +1,8 @@
 .heading {
   color: var(--color-adm);
 }
+
+.addWishContainer {
+  display: flex;
+  justify-content: center;
+}

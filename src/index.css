@@ -16,6 +16,7 @@
   --color-shd: rgba(0, 0, 0, 0.2);
   --color-shd-dark: rgba(0, 0, 0, 0.5);
   --color-lnk: #004acb;
+  --color-lnk--hov: #206aeb;
   --color-lnk-bkg: rgba(20, 20, 80, 0.1);
   --color-lnk-bkg--hov: rgba(20, 20, 80, 0.05);
   --color-ok: #50b020;
@@ -61,11 +62,6 @@ body {
   line-height: var(--size-line-height);
 
   overflow-y: scroll;
-}
-
-a {
-  color: var(--color-lnk);
-  text-decoration: none;
 }
 
 h1,

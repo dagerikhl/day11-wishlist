@@ -5,28 +5,32 @@ import styles from "./Space.module.css";
 
 type SpaceType = boolean | "x-small" | "small" | "medium" | "large";
 
-interface Props {
+export interface SpaceProps {
   className?: string;
   element?: string;
+  vertical?: boolean;
   top?: SpaceType;
   right?: SpaceType;
   bottom?: SpaceType;
   left?: SpaceType;
 }
 
-export const Space: React.FC<Props> = ({
+export const Space: React.FC<SpaceProps> = ({
   className,
   element = "div",
+  vertical,
   top,
   right,
   bottom,
   left,
   children,
+  ...rest
 }) =>
   React.createElement(
     element,
     {
       className: cz(className, styles.space, {
+        [styles.spaceVertical]: !!vertical,
         [styles.topXSmall]: top === "x-small",
         [styles.topSmall]: top === "small",
         [styles.topMedium]: top === "medium" || top === true,
@@ -44,6 +48,7 @@ export const Space: React.FC<Props> = ({
         [styles.leftMedium]: left === "medium" || left === true,
         [styles.leftLarge]: left === "large",
       }),
+      ...rest,
     },
     children
   );

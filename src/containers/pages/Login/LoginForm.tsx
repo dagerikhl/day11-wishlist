@@ -7,12 +7,17 @@ import { Space } from "../../../components/layout/Space/Space";
 
 import styles from "./LoginForm.module.css";
 
-interface Props {
+interface LoginFormProps {
+  resetStatus: () => void;
   setSuccessMessage: (successMessage?: string) => void;
   setError: (error?: Error) => void;
 }
 
-export const LoginForm: React.FC<Props> = ({ setSuccessMessage, setError }) => {
+export const LoginForm: React.FC<LoginFormProps> = ({
+  resetStatus,
+  setSuccessMessage,
+  setError,
+}) => {
   const auth = useAuth();
 
   const [email, setEmail] = useState("");
@@ -21,14 +26,16 @@ export const LoginForm: React.FC<Props> = ({ setSuccessMessage, setError }) => {
   const handleEmailChange: React.ChangeEventHandler<HTMLInputElement> = (
     event
   ) => {
-    setError();
+    resetStatus();
+
     setEmail(event.target.value);
   };
 
   const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> = (
     event
   ) => {
-    setError();
+    resetStatus();
+
     setPassword(event.target.value);
   };
 
@@ -37,8 +44,7 @@ export const LoginForm: React.FC<Props> = ({ setSuccessMessage, setError }) => {
   };
 
   const handleSubmit: React.MouseEventHandler = () => {
-    setSuccessMessage();
-    setError();
+    resetStatus();
 
     auth
       .signInWithEmailAndPassword(email, password)

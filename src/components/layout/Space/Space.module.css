@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.spaceVertical {
+  flex-direction: row;
+}
+
 .topXSmall {
   margin-top: var(--space-x-small);
 }

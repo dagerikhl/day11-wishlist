@@ -26,6 +26,14 @@
 .day11-anchor {
   display: flex;
   align-items: center;
+
+  color: var(--color-lnk);
+
+  text-decoration: none;
+}
+
+.day11-anchor:hover {
+  color: var(--color-lnk--hov);
 }
 
 .day11-anchor-text {
