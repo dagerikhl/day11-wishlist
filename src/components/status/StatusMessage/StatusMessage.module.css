@@ -1,6 +1,8 @@
 .statusMessage {
   font-size: 200%;
   font-weight: bold;
+  line-height: 150%;
+  text-align: center;
 }
 
 .success {
