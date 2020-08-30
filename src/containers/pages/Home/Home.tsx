@@ -11,7 +11,7 @@ export const Home: React.FC = () => {
 
   return (
     <>
-      <Space className={styles.description} bottom="large">
+      <Space className={styles.description} bottom>
         <p>{strings.lead[1]}</p>
         <p>{strings.lead[2]}</p>
         <p>{strings.lead[3]}</p>

@@ -12,6 +12,10 @@ export interface PersonalizationStrings {
       error: string;
     };
   };
+  contact: {
+    email: string;
+    label: string;
+  };
   goto: {
     "wish-url": string;
   };

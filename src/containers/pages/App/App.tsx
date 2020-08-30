@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 
-import { Space } from "../../../components/layout/Space/Space";
 import { Suspended } from "../../../components/suspense/Suspended/Suspended";
 import { Personalization } from "../../../contexts/Personalization";
 import LoginStatus from "./LoginStatus";
@@ -25,16 +24,24 @@ export const App: React.FC = () => {
         </Suspended>
       </header>
 
-      <main className={styles.mainContainer}>
-        <Space className={styles.main} element="main" top>
-          <Routes />
-        </Space>
+      <main className={styles.main}>
+        <Routes />
       </main>
 
       <footer className={styles.footer}>
         <div>
           <i className="bx bx-copyright" />
           &nbsp;{strings.author} - 2020
+        </div>
+
+        <div>
+          {strings.contact.label}:{" "}
+          <a
+            className={styles.contactEmail}
+            href={`mailto:${strings.contact.email}`}
+          >
+            {strings.contact.email}
+          </a>
         </div>
 
         <div>v{pkg.version}</div>

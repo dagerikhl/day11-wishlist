@@ -14,8 +14,7 @@
   font-size: 80%;
 }
 
-.mainContare {
-  background-color: var(--color-bkg-pri);
+.mainContainer {
 }
 
 .main {
@@ -28,6 +27,8 @@
   );
 
   padding: 16px 64px 128px 64px;
+
+  background-color: var(--color-bkg-pri);
 }
 
 .footer {
@@ -44,6 +45,13 @@
   border-top: 1px solid var(--color-shd);
 
   white-space: nowrap;
+}
+
+.contactEmail {
+  color: var(--color-lnk-sec);
+}
+.contactEmail:hover {
+  color: var(--color-lnk-sec--hov);
 }
 
 @media only screen and (max-width: 600px) {

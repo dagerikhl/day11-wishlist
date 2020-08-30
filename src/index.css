@@ -19,6 +19,8 @@
   --color-lnk--hov: #206aeb;
   --color-lnk-bkg: rgba(20, 20, 80, 0.1);
   --color-lnk-bkg--hov: rgba(20, 20, 80, 0.05);
+  --color-lnk-sec: #69b1ff;
+  --color-lnk-sec--hov: #8cd2ff;
   --color-ok: #50b020;
   --color-err: #f00000;
   --color-adm: #d05042;
