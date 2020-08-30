@@ -36,6 +36,7 @@ export const Wish: React.FC = () => {
   }, [documentId, firestore]);
 
   const [aquired, setAquired] = useState(false);
+  const [description, setDescription] = useState("");
   const [icon, setIcon] = useState("");
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
@@ -52,6 +53,14 @@ export const Wish: React.FC = () => {
     resetStatus();
 
     setIcon(event.target.value);
+  };
+
+  const onDescriptionChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    resetStatus();
+
+    setDescription(event.target.value);
   };
 
   const onTitleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -73,7 +82,7 @@ export const Wish: React.FC = () => {
       firestore
         .collection("wishes")
         .doc(documentId)
-        .update({ aquired, icon, title, url })
+        .update({ aquired, description, icon, title, url })
         .then(() => {
           setSuccessMessage("Wish updated");
         })
@@ -81,7 +90,7 @@ export const Wish: React.FC = () => {
     } else {
       firestore
         .collection("wishes")
-        .add({ aquired, icon, title, url })
+        .add({ aquired, description, icon, title, url })
         .then(() => {
           setSuccessMessage("Wish added");
         })
@@ -98,6 +107,12 @@ export const Wish: React.FC = () => {
       {statusElement}
 
       <Input placeholder="Title" value={title} onChange={onTitleChange} />
+      <Input
+        placeholder="Description"
+        value={description}
+        onChange={onDescriptionChange}
+        top
+      />
       <Input placeholder="Icon" value={icon} onChange={onIconChange} top />
       <Input placeholder="URL" value={url} onChange={onUrlChange} top />
       <Input
