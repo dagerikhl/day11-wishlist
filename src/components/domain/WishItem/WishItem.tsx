@@ -37,7 +37,9 @@ export const WishItem: React.FC<WishItemProps> = ({ documentId, wish }) => {
       <Checkbox checked={wish.aquired} />
 
       <div className={styles.contentContainer}>
-        <img className={styles.icon} src={wish.icon} alt={wish.title} />
+        {wish.icon && (
+          <img className={styles.icon} src={wish.icon} alt={wish.title} />
+        )}
 
         <div className={styles.textContainer}>
           <h1 className={styles.title}>{wish.title}</h1>
