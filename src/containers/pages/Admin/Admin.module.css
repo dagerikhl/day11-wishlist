@@ -2,6 +2,11 @@
   color: var(--color-adm);
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+}
+
 .addWishContainer {
   display: flex;
   justify-content: center;

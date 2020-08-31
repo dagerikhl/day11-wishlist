@@ -13,12 +13,12 @@
   transition: all 55ms linear;
 }
 
-.day11-field-base:hover {
+.day11-field-base:hover:not(:disabled) {
   background-color: var(--color-bkg-pri--hov);
   box-shadow: var(--box-shadow-outside--elevated);
 }
 
-.day11-field-base:focus {
+.day11-field-base:focus:not(:disabled) {
   border: 2px solid var(--color-brd-pri--foc);
   box-shadow: var(--box-shadow-outside--elevated);
 }
