@@ -28,6 +28,7 @@ export const Wish: React.FC = () => {
         .get()
         .then((data) => {
           setAquired(!!data.get("aquired"));
+          setDescription(data.get("description") || "");
           setIcon(data.get("icon") || "");
           setTitle(data.get("title") || "");
           setUrl(data.get("url") || "");
