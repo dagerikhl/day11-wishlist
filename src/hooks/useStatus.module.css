@@ -1,3 +1,12 @@
 .messageContainer {
-  min-height: calc(var(--size-line-height) * 2);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  padding: 4px 8px;
+
+  background-color: var(--color-bkg-notification);
+  border-bottom: 1px solid var(--color-shd);
+  box-shadow: var(--box-shadow-outside--elevated);
 }

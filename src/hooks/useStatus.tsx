@@ -34,12 +34,13 @@ export const useStatus: UseStatus = (
     setError(undefined);
   };
 
-  const statusElement = (
-    <Space className={styles.messageContainer} bottom>
-      <StatusMessage type="success" message={successMessage} />
-      <StatusMessage type="error" message={error?.message} />
-    </Space>
-  );
+  const statusElement =
+    successMessage || error ? (
+      <Space className={styles.messageContainer} bottom>
+        <StatusMessage type="success" message={successMessage} />
+        <StatusMessage type="error" message={error?.message} />
+      </Space>
+    ) : null;
 
   useEffect(() => {
     if (clearAfter === undefined) {
