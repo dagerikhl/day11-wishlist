@@ -111,14 +111,14 @@ export const Admin: React.FC = () => {
       {statusElement}
 
       <div className={styles.actions}>
-        <Button onClick={handleExportWishes} right="large">
+        <Button onClick={handleExportWishes} right="large" bottom>
           Export all wishes&nbsp;
           <i className="bx bx-export" />
         </Button>
 
-        <Input type="file" onChange={handleFileUpload} right="small" />
+        <Input type="file" onChange={handleFileUpload} right="small" bottom />
 
-        <Button onClick={handleImportWishes} disabled={!uploadedWishes}>
+        <Button onClick={handleImportWishes} disabled={!uploadedWishes} bottom>
           Import wishes&nbsp;
           <i className="bx bx-import" />
         </Button>
