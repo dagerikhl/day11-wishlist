@@ -8,6 +8,7 @@
   --color-bkg-pri: #fffafa;
   --color-bkg-pri--hov: #efeaea;
   --color-bkg-sec: #555050;
+  --color-bkg-notification: #ffffff;
   --color-brd-pri: #555050;
   --color-brd-pri--foc: #7777ff;
   --color-brd-sec: #fffafa;
@@ -27,6 +28,7 @@
 
   /* Sizes */
   --size-header-height: 96px;
+  --size-footer-height: 128px;
   --size-font: 16px;
   --size-line-height: 24px;
 
@@ -73,8 +75,12 @@ h4,
 h5,
 h6 {
   margin: 0;
+
+  line-height: 140%;
 }
 
 p {
   margin-top: 0;
+
+  text-align: center;
 }

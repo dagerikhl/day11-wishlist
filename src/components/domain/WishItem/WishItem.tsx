@@ -1,13 +1,14 @@
 import cz from "classnames";
 import React, { useContext } from "react";
-import { useFirestore } from "reactfire";
 import { confirmAlert } from "react-confirm-alert";
+import { useFirestore } from "reactfire";
 
 import { Personalization } from "../../../contexts/Personalization";
 import { Wish } from "../../../interfaces/Wish";
 import { Checkbox } from "../../form/Checkbox/Checkbox";
 import { ExternalAnchor } from "../../elements/ExternalAnchor/ExternalAnchor";
 import { Space } from "../../layout/Space/Space";
+import { ConfirmPrompt } from "./ConfirmPrompt";
 
 import styles from "./WishItem.module.css";
 
@@ -36,12 +37,18 @@ export const WishItem: React.FC<WishItemProps> = ({
       message:
         strings["check-wish"][wish.aquired ? "checked" : "unchecked"].confirm
           .message,
-      buttons: [
-        {
-          label:
+      customUI: (props) => (
+        <ConfirmPrompt
+          {...props}
+          confirmLabel={
             strings["check-wish"][wish.aquired ? "checked" : "unchecked"]
-              .confirm.yes,
-          onClick: () => {
+              .confirm.yes
+          }
+          declineLabel={
+            strings["check-wish"][wish.aquired ? "checked" : "unchecked"]
+              .confirm.no
+          }
+          onConfirm={() => {
             firestore
               .collection("wishes")
               .doc(documentId)
@@ -60,15 +67,9 @@ export const WishItem: React.FC<WishItemProps> = ({
 
                 setError(error);
               });
-          },
-        },
-        {
-          label:
-            strings["check-wish"][wish.aquired ? "checked" : "unchecked"]
-              .confirm.no,
-          onClick: () => {},
-        },
-      ],
+          }}
+        />
+      ),
     });
   };
 
