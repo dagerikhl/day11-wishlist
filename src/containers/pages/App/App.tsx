@@ -7,6 +7,7 @@ import { Routes } from "./Routes";
 
 import styles from "./App.module.css";
 
+import bannerImage from "../../../assets/images/banner-image.png";
 import pkg from "../../../../package.json";
 
 export const App: React.FC = () => {
@@ -18,6 +19,14 @@ export const App: React.FC = () => {
         <h1>
           <i className="bx bxs-heart" /> {strings.title}
         </h1>
+
+        <div className={styles.headerImgContainer}>
+          <img
+            className={styles.headerImg}
+            src={bannerImage}
+            alt="Banner image"
+          />
+        </div>
 
         <Suspended traceId="login-status">
           <LoginStatus />

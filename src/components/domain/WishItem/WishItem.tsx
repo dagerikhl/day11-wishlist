@@ -91,8 +91,8 @@ export const WishItem: React.FC<WishItemProps> = ({
         )}
 
         <div className={styles.textContainer}>
-          <h1 className={styles.title}>{wish.title}</h1>
-          <Space element="h2" className={styles.description} top="small">
+          <h2>{wish.title}</h2>
+          <Space className={styles.description} top="small">
             {wish.description}
           </Space>
 

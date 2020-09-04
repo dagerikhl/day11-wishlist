@@ -1,3 +1,4 @@
+import cz from "classnames";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
@@ -34,13 +35,17 @@ export const useStatus: UseStatus = (
     setError(undefined);
   };
 
-  const statusElement =
-    successMessage || error ? (
-      <Space className={styles.messageContainer} bottom>
-        <StatusMessage type="success" message={successMessage} />
-        <StatusMessage type="error" message={error?.message} />
-      </Space>
-    ) : null;
+  const statusElement = (
+    <Space
+      className={cz(styles.messageContainer, {
+        [styles.messageContainerHidden]: !successMessage && !error,
+      })}
+      bottom
+    >
+      <StatusMessage type="success" message={successMessage} />
+      <StatusMessage type="error" message={error?.message} />
+    </Space>
+  );
 
   useEffect(() => {
     if (clearAfter === undefined) {

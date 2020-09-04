@@ -1,0 +1,5 @@
+@font-face {
+  font-family: "WeddingFont";
+  src: local("WeddingFont"),
+    url(../assets/fonts/Tangerine_Bold.ttf) format("truetype");
+}

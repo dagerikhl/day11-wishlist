@@ -1,12 +1,25 @@
 .messageContainer {
   position: fixed;
+
   top: 0;
   right: 0;
   left: 0;
 
+  height: var(--size-header-height);
+
   padding: 4px 8px;
+
+  opacity: 1;
 
   background-color: var(--color-bkg-notification);
   border-bottom: 1px solid var(--color-shd);
   box-shadow: var(--box-shadow-outside--elevated);
+
+  transition: opacity 150ms ease-in-out;
+}
+
+.messageContainerHidden {
+  opacity: 0;
+
+  pointer-events: none;
 }

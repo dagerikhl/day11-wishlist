@@ -8,7 +8,7 @@ interface PoolProps {
 
 export const Pool: React.FC<PoolProps> = ({ title, children }) => (
   <div className={styles.container}>
-    {title && <div className={styles.heading}>{title}</div>}
+    {title && <h2 className={styles.heading}>{title}</h2>}
 
     <div className={styles.pool}>{children}</div>
   </div>
