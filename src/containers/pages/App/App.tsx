@@ -24,7 +24,7 @@ export const App: React.FC = () => {
           <img
             className={styles.headerImg}
             src={bannerImage}
-            alt="Banner image"
+            alt="Banner"
           />
         </div>
 
