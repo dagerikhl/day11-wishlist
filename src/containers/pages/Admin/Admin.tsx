@@ -126,10 +126,8 @@ export const Admin: React.FC = () => {
 
       <Pool>
         <div className={styles.addWishContainer}>
-          <InternalAnchor to="/admin/wishes" top bottom>
-            <Button>
-              <i className="bx bx-plus" />
-            </Button>
+          <InternalAnchor to="/admin/wishes" type="button" top bottom>
+            <i className="bx bx-plus" />
           </InternalAnchor>
         </div>
 

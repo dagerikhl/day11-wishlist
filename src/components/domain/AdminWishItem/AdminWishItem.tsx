@@ -41,10 +41,8 @@ export const AdminWishItem: React.FC<AdminWishItemProps> = ({
         <h1 className={styles.title}>{wish.title}</h1>
 
         <div className={styles.actionsContainer}>
-          <InternalAnchor to={`/admin/wishes/${documentId}`}>
-            <Button>
-              <i className="bx bx-pencil" />
-            </Button>
+          <InternalAnchor to={`/admin/wishes/${documentId}`} type="button">
+            <i className="bx bx-pencil" />
           </InternalAnchor>
 
           <Button onClick={onDelete} left>
