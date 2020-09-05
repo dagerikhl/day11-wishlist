@@ -33,7 +33,7 @@ export const Admin: React.FC = () => {
   const wishesRef = firestore.collection("wishes");
   const wishesCollection = (useFirestoreCollection as FixedUseFireStoreCollection)<
     Wish
-  >(wishesRef);
+  >(wishesRef.orderBy("title"));
   const wishesDocuments = wishesCollection.docs;
 
   const { setError, setSuccessMessage, statusElement } = useStatus(1000);
