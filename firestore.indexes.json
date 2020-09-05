@@ -1,4 +1,13 @@
 {
-  "indexes": [],
+  "indexes": [
+    {
+      "collectionGroup": "wishes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "aquired", "order": "ASCENDING" },
+        { "fieldPath": "title", "order": "ASCENDING" }
+      ]
+    }
+  ],
   "fieldOverrides": []
 }
